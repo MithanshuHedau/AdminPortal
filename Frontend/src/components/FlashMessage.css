@@ -1,0 +1,126 @@
+/* FlashMessage.css */
+.flash-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  min-width: 300px;
+  max-width: 500px;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-out;
+}
+
+.flash-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.flash-text {
+  flex: 1;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.flash-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+/* Success Flash */
+.flash-success {
+  background-color: #d1fae5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.flash-success .flash-close {
+  color: #065f46;
+}
+
+.flash-success .flash-close:hover {
+  background-color: #a7f3d0;
+}
+
+/* Error Flash */
+.flash-error {
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.flash-error .flash-close {
+  color: #991b1b;
+}
+
+.flash-error .flash-close:hover {
+  background-color: #fca5a5;
+}
+
+/* Warning Flash */
+.flash-warning {
+  background-color: #fef3c7;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+}
+
+.flash-warning .flash-close {
+  color: #92400e;
+}
+
+.flash-warning .flash-close:hover {
+  background-color: #fcd34d;
+}
+
+/* Info Flash */
+.flash-info {
+  background-color: #dbeafe;
+  border: 1px solid #93c5fd;
+  color: #1e40af;
+}
+
+.flash-info .flash-close {
+  color: #1e40af;
+}
+
+.flash-info .flash-close:hover {
+  background-color: #93c5fd;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .flash-message {
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+}
